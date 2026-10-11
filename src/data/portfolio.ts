@@ -134,7 +134,7 @@ export const portfolio: PortfolioData = {
 
   contact: {
     email: "arulbalaji04@gmail.com",
-    linkedin: "", // e.g. "https://www.linkedin.com/in/your-name"
+    linkedin: "https://www.linkedin.com/in/arulbalaji-kalaivanan-1383b6191",
     github: "https://github.com/arulbalajik04",
   },
 };
