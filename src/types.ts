@@ -10,7 +10,18 @@ export interface Profile {
   location?: string; // "?" means optional — you can leave it out
   intro: string; // 2–3 lines about you, shown in the About section
   yearsOfExperience: number;
+  featuredSkills: string[]; // 4 skills shown as pills in the hero
   resumeUrl?: string; // a link to your resume (Google Drive etc.)
+}
+
+export interface Education {
+  degree: string;
+  school: string;
+}
+
+export interface Certification {
+  name: string;
+  issuer: string;
 }
 
 export interface SkillGroup {
@@ -21,6 +32,7 @@ export interface SkillGroup {
 export interface Experience {
   company: string;
   role: string;
+  client?: string; // e.g. the client or product you worked on
   start: string; // e.g. "Jun 2022"
   end: string; // e.g. "Present"
   points: string[]; // what you did there
@@ -45,6 +57,8 @@ export interface PortfolioData {
   profile: Profile;
   skills: SkillGroup[];
   experience: Experience[];
+  education: Education[];
+  certifications: Certification[];
   projects: Project[];
   contact: Contact;
 }
