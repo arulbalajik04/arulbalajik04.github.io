@@ -10,7 +10,7 @@ import Portfolio from "./components/Portfolio";
 import Contact from "./components/Contact";
 
 export default function App() {
-  const { profile, skills, experience, projects, contact } = portfolio;
+  const { profile, skills, experience, education, certifications, projects, contact } = portfolio;
   const allTech = skills.flatMap((g) => g.items);
 
   // useEffect runs code after the page draws.
@@ -34,9 +34,15 @@ export default function App() {
       <div className="grid-bg" aria-hidden="true" />
       <Navbar name={profile.name} />
       <main>
-        <Hero profile={profile} contact={contact} techPills={allTech.slice(0, 4)} />
+        <Hero profile={profile} contact={contact} techPills={profile.featuredSkills} />
         <About profile={profile} projectCount={projects.length} techCount={allTech.length} />
-        <Portfolio projects={projects} experience={experience} skills={skills} />
+        <Portfolio
+          projects={projects}
+          experience={experience}
+          education={education}
+          certifications={certifications}
+          skills={skills}
+        />
         <Contact contact={contact} />
       </main>
       <footer className="footer">

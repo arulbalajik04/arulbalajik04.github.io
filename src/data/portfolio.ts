@@ -2,65 +2,139 @@ import type { PortfolioData } from "../types";
 
 // ============================================================
 //  THIS IS THE ONLY FILE YOU NEED TO EDIT FOR YOUR CONTENT.
-//  Replace every value inside [square brackets] with your real details.
-//  Save the file, and the website updates automatically.
+//  Change any value below, save the file, and the website updates automatically.
 // ============================================================
 
 export const portfolio: PortfolioData = {
   profile: {
-    name: "[Your Name]",
-    title: "Software Developer",
-    roles: ["Software Developer", "IBM ODM Rules Engineer", "Problem Solver"],
-    tagline: "Building reliable systems and business rules that just work.",
-    location: "[Your City]",
+    name: "Arulbalaji K",
+    title: "Full Stack Developer",
+    roles: ["Full Stack Developer", "Java & Spring Boot Engineer", "IBM ODM Developer"],
+    tagline:
+      "Building scalable SaaS platforms, event-driven microservices, and business rules that just work.",
     intro:
-      "[Write 2–3 lines about yourself. For example: what kind of systems you build, what you enjoy working on, and what role you are looking for next.]",
+      "Hello, I'm Arulbalaji K, a Full Stack Developer with 4+ years of experience building enterprise SaaS applications with Java, Spring Boot, Microservices and React.js. I design event-driven systems with Apache Kafka, author business rules in IBM ODM, and ship through Docker, Kubernetes and Jenkins CI/CD.",
     yearsOfExperience: 4,
+    featuredSkills: ["Java", "Spring Boot", "React.js", "IBM ODM"],
     resumeUrl: "", // paste a link to your resume here, e.g. a Google Drive share link
   },
 
   skills: [
-    { category: "Languages", items: ["[Language 1]", "[Language 2]"] },
-    { category: "Rules & Decisions", items: ["IBM ODM", "[Related tool]"] },
-    { category: "Frameworks & Tools", items: ["[Framework]", "[Tool]"] },
-    { category: "Databases & Cloud", items: ["[Database]", "[Cloud]"] },
+    {
+      category: "Backend",
+      items: ["Java", "Spring Boot", "Microservices", "REST APIs", "Spring Security", "Hibernate / JPA", "J2EE", "Node.js"],
+    },
+    {
+      category: "Frontend",
+      items: ["React.js", "Redux", "AngularJS", "JavaScript", "HTML5", "CSS3"],
+    },
+    {
+      category: "Business Rules",
+      items: ["IBM ODM", "Rule Designer", "Decision Center"],
+    },
+    {
+      category: "Messaging & Integrations",
+      items: ["Apache Kafka", "Kafka Streams", "SendGrid", "Twilio"],
+    },
+    {
+      category: "Databases",
+      items: ["MongoDB", "MySQL", "Oracle", "SQL Server"],
+    },
+    {
+      category: "DevOps & Cloud",
+      items: ["Docker", "Kubernetes", "Jenkins CI/CD", "AWS", "Red Hat OpenShift"],
+    },
+    {
+      category: "Testing & Tools",
+      items: ["JUnit", "Mockito", "Jest", "SOAP UI", "Maven", "Git", "Jira", "WebSphere", "Tomcat"],
+    },
   ],
 
-  // Add one block per company. Newest first.
+  // Add one block per role. Newest first.
   experience: [
     {
-      company: "[Company Name]",
-      role: "[Your Role]",
-      start: "[Mon YYYY]",
+      company: "AVPS Technologies Inc",
+      client: "JM Family",
+      role: "ODM Developer",
+      start: "Aug 2026",
       end: "Present",
       points: [
-        "[One thing you did or achieved]",
-        "[Another thing you did or achieved]",
+        "Author and maintain Dealer Pricing business rules and decision artifacts in IBM ODM Rule Designer and Decision Center.",
+        "Publish rule projects to Decision Center and support release, activity and test-suite workflows.",
+        "Configure decision service components, decision operations and deployment configurations.",
+        "Validate pricing test scenarios and support rule migration and upgrade validation.",
       ],
     },
+    {
+      company: "AVPS Technologies Inc",
+      client: "krumago.com",
+      role: "Full Stack Engineer",
+      start: "Oct 2022",
+      end: "Present",
+      points: [
+        "Build end-to-end SaaS applications with Java, Spring Boot, Microservices, React.js and Redux across Education, Retail, Flex Office, WaaS and more.",
+        "Designed a domain-based architecture with shared services for products, orders, payments, invoices, subscriptions and notifications.",
+        "Designed REST APIs and Apache Kafka event-driven integrations for asynchronous, cross-service communication.",
+        "Manage Docker, Kubernetes and Jenkins CI/CD deployments, plus UAT and production support.",
+      ],
+    },
+    {
+      company: "AVPS Technologies Inc",
+      client: "RCCL",
+      role: "ODM Developer",
+      start: "Jun 2023",
+      end: "May 2024",
+      points: [
+        "Authored, deployed and tested ODM business rules in Rule Designer from Agile stories.",
+        "Maintained the rules application and its Java integration layer.",
+        "Deployed EJBs to WebSphere Application Server and ran integration testing.",
+      ],
+    },
+  ],
+
+  education: [
+    { degree: "Master of Computer Application (MCA)", school: "Asan Memorial College of Arts and Science, Chennai" },
+    { degree: "Bachelor of Computer Application (BCA)", school: "Vels University, Chennai" },
+  ],
+
+  certifications: [
+    { name: "Generative AI Essentials", issuer: "IBM" },
+    { name: "Generative AI: Prompt Engineering Basics", issuer: "Coursera" },
+    { name: "Generative AI Fundamentals Specialization", issuer: "Coursera" },
+    { name: "watsonx Orchestrate Sales Foundation", issuer: "IBM" },
   ],
 
   // Describe company projects safely: no private code or client secrets.
   projects: [
     {
-      name: "Personalisation Rules (IBM ODM)",
+      name: "Krumago SaaS Platform",
       summary:
-        "Business rules that personalise results based on customer age and shopping behaviour. [Add more detail in your own words.]",
-      role: "[What you personally did on this project]",
-      tech: ["IBM ODM", "[Other tech]"],
-      impact: "[Result or impact, if you know it]",
+        "Multi-domain SaaS platform covering Education, Retail, Flex Office, WaaS, Services, Institution and Assessment, with shared services for orders, payments, invoices and subscriptions.",
+      role: "Full stack engineer: built Spring Boot microservices, Kafka event flows, and React/Redux portals for admins, customers, instructors and students.",
+      tech: ["Java", "Spring Boot", "React.js", "Redux", "Kafka", "MongoDB"],
+      impact: "One platform serving many business domains from reusable, domain-driven services.",
+      link: "https://www.krumago.com",
     },
     {
-      name: "[Company Main Project]",
-      summary: "[What the project does, in simple words]",
-      role: "[What you personally did]",
-      tech: ["[Tech 1]", "[Tech 2]"],
+      name: "Dealer Pricing Rules",
+      summary:
+        "IBM ODM decision service that calculates dealer pricing for JM Family from configurable business rules.",
+      role: "Authored and maintained pricing rules, configured decision operations and deployments, and validated test scenarios.",
+      tech: ["IBM ODM", "Rule Designer", "Decision Center", "Java"],
+      impact: "Pricing changes ship as rule updates instead of code releases.",
+    },
+    {
+      name: "RCCL Business Rules Application",
+      summary:
+        "IBM ODM rules application with a Java integration layer, deployed on WebSphere Application Server.",
+      role: "Authored, deployed and tested rules from Agile stories, and maintained the Java integration layer and EJB deployments.",
+      tech: ["IBM ODM", "Java", "WebSphere", "JUnit"],
     },
   ],
 
   contact: {
-    email: "[your.email@example.com]",
+    email: "arulbalaji04@gmail.com",
     linkedin: "", // e.g. "https://www.linkedin.com/in/your-name"
-    github: "", // e.g. "https://github.com/your-username"
+    github: "https://github.com/arulbalajik04",
   },
 };
