@@ -1,13 +1,24 @@
-// PORTFOLIO SHOWCASE — three tabs: Projects, Experience and Tech Stack.
+// PORTFOLIO SHOWCASE — four tabs: Projects, Experience, Certificates and Tech Stack.
 import { useState } from "react";
-import type { Experience, Project, SkillGroup } from "../types";
+import type { Certification, Education, Experience, Project, SkillGroup } from "../types";
 import { reveal, useReveal } from "../hooks/useReveal";
 import type { RevealKind } from "../hooks/useReveal";
-import { ArrowRight, Briefcase, ChevronDown, Code, ExternalLink, Layers } from "./Icons";
+import {
+  ArrowRight,
+  Award,
+  Briefcase,
+  ChevronDown,
+  Code,
+  ExternalLink,
+  GraduationCap,
+  Layers,
+} from "./Icons";
 
 interface PortfolioProps {
   projects: Project[];
   experience: Experience[];
+  education: Education[];
+  certifications: Certification[];
   skills: SkillGroup[];
 }
 
@@ -20,10 +31,17 @@ const cardAnimation = (i: number): RevealKind =>
 const tabs = [
   { label: "Projects", Icon: Code },
   { label: "Experience", Icon: Briefcase },
+  { label: "Certificates", Icon: Award },
   { label: "Tech Stack", Icon: Layers },
 ];
 
-export default function Portfolio({ projects, experience, skills }: PortfolioProps) {
+export default function Portfolio({
+  projects,
+  experience,
+  education,
+  certifications,
+  skills,
+}: PortfolioProps) {
   const [tab, setTab] = useState(0);
   const [showAll, setShowAll] = useState(false);
 
@@ -38,8 +56,8 @@ export default function Portfolio({ projects, experience, skills }: PortfolioPro
       <div className="section-head" {...reveal("fade-up")}>
         <h2 className="section-title gradient-text">Portfolio Showcase</h2>
         <p className="section-sub">
-          Explore my journey through projects, work experience, and technical expertise. Each
-          section represents a milestone in my continuous learning path.
+          Explore my journey through projects, work experience, certifications, and technical
+          expertise. Each section represents a milestone in my continuous learning path.
         </p>
       </div>
 
@@ -78,33 +96,81 @@ export default function Portfolio({ projects, experience, skills }: PortfolioPro
         )}
 
         {tab === 1 && (
-          <div className="card-grid">
-            {experience.map((job, i) => (
-              <article key={job.company + job.start} className="exp-card" {...reveal(cardAnimation(i))}>
-                <div className="exp-head">
-                  <div className="exp-icon">
-                    <Briefcase className="icon" />
+          <>
+            <div className="card-grid">
+              {experience.map((job, i) => (
+                <article
+                  key={job.company + job.start}
+                  className="exp-card"
+                  {...reveal(cardAnimation(i))}
+                >
+                  <div className="exp-head">
+                    <div className="exp-icon">
+                      <Briefcase className="icon" />
+                    </div>
+                    <span className="exp-dates">
+                      {job.start} – {job.end}
+                    </span>
                   </div>
-                  <span className="exp-dates">
-                    {job.start} – {job.end}
-                  </span>
-                </div>
-                <h3 className="card-title">{job.role}</h3>
-                <p className="exp-company">{job.company}</p>
-                <ul className="feature-list">
-                  {job.points.map((pt) => (
-                    <li key={pt}>
-                      <span className="feature-dot" />
-                      <span>{pt}</span>
-                    </li>
+                  <h3 className="card-title">{job.role}</h3>
+                  <p className="exp-company">
+                    {job.company}
+                    {job.client && <span className="exp-client"> · {job.client}</span>}
+                  </p>
+                  <ul className="feature-list">
+                    {job.points.map((pt) => (
+                      <li key={pt}>
+                        <span className="feature-dot" />
+                        <span>{pt}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </article>
+              ))}
+            </div>
+
+            {education.length > 0 && (
+              <>
+                <h3 className="sub-heading" {...reveal("fade-up")}>
+                  <GraduationCap className="icon" /> Education
+                </h3>
+                <div className="card-grid two">
+                  {education.map((ed, i) => (
+                    <article
+                      key={ed.degree}
+                      className="exp-card compact"
+                      {...reveal(cardAnimation(i))}
+                    >
+                      <div className="exp-icon">
+                        <GraduationCap className="icon" />
+                      </div>
+                      <div>
+                        <h4 className="card-title small">{ed.degree}</h4>
+                        <p className="exp-company">{ed.school}</p>
+                      </div>
+                    </article>
                   ))}
-                </ul>
+                </div>
+              </>
+            )}
+          </>
+        )}
+
+        {tab === 2 && (
+          <div className="card-grid cert-grid">
+            {certifications.map((c, i) => (
+              <article key={c.name} className="exp-card cert-card" {...reveal(cardAnimation(i))}>
+                <div className="cert-icon">
+                  <Award className="icon-lg" />
+                </div>
+                <h3 className="card-title small">{c.name}</h3>
+                <span className="cert-issuer">{c.issuer}</span>
               </article>
             ))}
           </div>
         )}
 
-        {tab === 2 && (
+        {tab === 3 && (
           <div className="tech-grid">
             {techItems.map(({ item, category }, i) => (
               <div key={item + i} className="tech-card" {...reveal(cardAnimation(i))}>

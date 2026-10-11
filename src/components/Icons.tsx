@@ -112,33 +112,17 @@ export const Download = (p: IconProps) => (
   </Svg>
 );
 
-export const User = (p: IconProps) => (
+export const Award = (p: IconProps) => (
   <Svg {...p}>
-    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
-    <circle cx="12" cy="7" r="4" />
+    <circle cx="12" cy="8" r="6" />
+    <path d="M15.5 13.2L17 22l-5-3-5 3 1.5-8.8" />
   </Svg>
 );
 
-export const MessageSquare = (p: IconProps) => (
+export const GraduationCap = (p: IconProps) => (
   <Svg {...p}>
-    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-  </Svg>
-);
-
-export const Send = (p: IconProps) => (
-  <Svg {...p}>
-    <path d="M22 2L11 13" />
-    <path d="M22 2l-7 20-4-9-9-4z" />
-  </Svg>
-);
-
-export const Share = (p: IconProps) => (
-  <Svg {...p}>
-    <circle cx="18" cy="5" r="3" />
-    <circle cx="6" cy="12" r="3" />
-    <circle cx="18" cy="19" r="3" />
-    <path d="M8.6 13.5l6.8 4" />
-    <path d="M15.4 6.5l-6.8 4" />
+    <path d="M22 10L12 5 2 10l10 5z" />
+    <path d="M6 12v5c3 3 9 3 12 0v-5" />
   </Svg>
 );
 
